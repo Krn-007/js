@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai or js</title>
+</head>
+<body>
+    <h1>Chai or JS</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let stopInterval;
+    const startChangingName = function(){
+    stopInterval = setInterval(function(){
+        console.log("Karan");
+    },2000)
+   }
+   const stopChangingName = function() {
+    clearInterval(stopInterval)
+   }
+
+   document.querySelector("#start").addEventListener("click", startChangingName)
+
+   document.querySelector("#stop").addEventListener('click',stopChangingName)
+</script>
+</html>

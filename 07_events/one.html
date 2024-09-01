@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/20284614/pexels-photo-20284614/free-photo-of-balconies-on-residential-building-wall.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="House"></li>
+            <li><img width="200px" id="ship" src="https://images.pexels.com/photos/18577252/pexels-photo-18577252/free-photo-of-sailboat-and-yacht-moored-in-harbor.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="ship"></li>
+            <li><img width="200px" id="mountain" src="https://images.pexels.com/photos/27757764/pexels-photo-27757764/free-photo-of-a-view-of-the-mountains-from-a-mountain-top.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="mountain"></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById("images").addEventListener("click", (e)=>{
+    //     console.log("clicked inside the ul");
+        
+    // },false)  //type, timestamp, defaultPrevented, target, toElement, srcElement, currentTarget, clientX, clientY, screenX, screenY, altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById("mountain").addEventListener("click", (e)=>{
+    //     console.log("mountain clicked");
+    //     e.stopPropagation(); // it stops the event propogation if exist any
+        
+    // },false)
+    // // here the true or false parameter means event propogation which means bubbling up that is script track the elements from the inside to outside when is set to default which is false if it is true then then it is called capturing mode in which script tracks the element from the outside to inside 
+
+    // // preventdefault
+    // document.getElementById("google").addEventListener("click",(e)=>{
+    //     console.log("google clicked");
+        
+    //     e.preventDefault() // before using this method whenever i click on google in the browser it takes me to the google website but after using nothing happens on clicking on the google
+    //     e.stopPropagation()
+    // },false)
+
+    document.getElementById("images").addEventListener('click',(e)=>{
+            console.log(e.target.tagName);
+            if(e.target.tagName === 'IMG'){
+                console.log(e.target.id);
+                
+                let removeIt = e.target.parentNode
+                removeIt.remove() // 1st method
+            //removeIt.parentNode.removeChild(removeIt) 2nd method
+            }
+            
+            
+    },false)
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,13 @@
+js is synchronous and single threaded language
+execution context: execute oneline at a time
+console log -> 1
+console log -> 2
+each operation waits for the last one before executing
+
+Call Stack      Memory Heap
+
+
+Blocking Code    vs     Non-Blocking Code
+->Blocks the flow      -> does not block execution
+of program             ->Read File Async
+->Read File Sync 
